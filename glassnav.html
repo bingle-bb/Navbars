@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Glass Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Glassy Navbar Style */
+        .navbar {
+            background: rgba(5, 86, 236, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Center Navbar Links */
+        .navbar-nav {
+            margin: 0 auto;
+        }
+
+        /* Circular Logo */
+        .navbar-brand img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            object-fit: cover;
+        }
+
+        /* Nav Links */
+        .nav-link {
+            color: #ffffff;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .nav-link:hover {
+            color: #ffffff;
+            background-color: #08118a;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Button */
+        .btn-contact {
+            background-color: #08118a;
+            color: white;
+            font-weight: bold;
+            border-radius: 9px;
+            padding: 8px 16px;
+        }
+
+        .btn-contact:hover {
+            background-color: #7a9e25;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            background-image: url(images/Indawgyi\ Lake.jpeg);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="images/logo.jpg" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Destinations</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Events and festivals</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About us</a></li>
+            </ul>
+
+            <!-- Language Dropdown -->
+            <div class="dropdown ms-auto me-4"> <!-- Adjust margin for space -->
+                <button class="btn btn-outline-light dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    Language
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                    <li><a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a></li>
+                   <li><a class="dropdown-item" href="#" onclick="changeLanguage('my')">မြန်မာ</a></li> <!-- Added Myanmar -->
+                </ul>
+            </div>
+
+            <!-- Contact Button -->
+            <a href="#" class="btn btn-contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<header class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title" id="hero-title">Welcome to Our Website</h1>
+        <p class="hero-subtitle" id="hero-subtitle">Your journey begins here</p>
+    </div>
+</header>
+
+<!-- Updated JavaScript Links -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function changeLanguage(lang) {
+        const title = document.getElementById('hero-title');
+        const subtitle = document.getElementById('hero-subtitle');
+
+        if (lang === 'en') {
+            title.textContent = 'Welcome to Our Website';
+            subtitle.textContent = 'Your journey begins here';
+        } else if (lang === 'my') { // Myanmar
+            title.textContent = 'ကျွန်ုပ်တို့၏ဝဘ်ဆိုက်သို့ကြိုဆိုပါတယ်';
+            subtitle.textContent = 'သင်၏ခရီးစဉ်သည်ဤနေရာတွင်စတင်သည်';
+        }
+    }
+</script>
+
+</body>
+</html>
